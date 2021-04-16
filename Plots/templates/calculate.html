@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block help %}
+            "*" - Умножить,"+"- Сложить,"/" - Делить,"-"- Вычесть,"^"- Возвести в степень</br>
+            <button class = "button" onclick = "ChangeColor();"></button>
+{% endblock help %}
+{% block changes %}
+    {% if request.user.is_authenticated %}
+            <li><a href="{% url 'account:logout' %}" >LogOut</a></li>
+    {% else %}
+        <li><a href="{% url 'account:login' %}" >LogIn</a></li>
+    {% endif %}
+{% endblock %}
+{% block content %}
+<div id = "EnterField">
+            <input type="submit" id="save" value="Save" name = "Save" onclick="save();">
+                <input type="text" id = "equation" name = "equation" placeholder = "sin(x)*log(x)[e]*tg(x/2)+(2*x+6/x)">
+                <input type="text" id = "diapasonLeft" name = "left" placeholder = "Fr">
+                <input type="text" id = "diapasonRight" name = "right" placeholder = "to">
+				<input type="text" id = "step" placeholder = "step">
+                <input type="submit" id="calc" value="Calculate"  name = "Calculate" onclick = "send_data();">
+                
+		        <h3 id = "script">{{ error }}</h3>
+            <div class="chart-container" id = "chart-container" style="position: relative; height:40vh; width:80vw">
+                <canvas id="speedChart" width="250" height="100"></canvas>
+            </div>
+</div>
+{% endblock content %}

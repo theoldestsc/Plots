@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load plot_tags %}
+{% load thumbnail %}
+
+{% block changes %}
+            <li><a href="{% url 'Plots:main' %}" >Calculate</a></li>
+{% endblock changes %}
+
+{% block library %}
+
+    {% for image in q_set_Plots %}
+        {% thumbnail image.image "300x120" crop="100%" as im %}
+        <div class="polaroid">
+            <a href="{{image.image.url}}">
+                 <img src = "{{ im.url }}">
+                 <a class = "id_{{ image.id }}" id = "editI" href="#">Info</a>
+                 <a href = "del" class = "del_id_{{ image.id }}" id = "editD">Del</a>
+                 <a id = "editC">Comments</a>
+                 <div class = "div_id_{{ image.id }}" id="text-block">
+                    <p>{% plotInfo image %}
+                    </p>
+                </div>
+            </a>
+        </div>
+        {% endthumbnail %}
+    {% endfor %}
+{% endblock library %}

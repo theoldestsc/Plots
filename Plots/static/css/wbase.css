@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background: #1c1d22;
+  font-family: "Varela Round", sans-serif;
+  overflow:hidden;
+}
+/*start*/
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+  height: 10vh;
+  list-style: none;
+}
+
+.menu li {
+  width: 125px;
+  height: 50px;
+  transition: background-position-x 0.9s linear;
+  text-align: center;
+  margin-bottom:10px;
+}
+  a{
+    font-size: 22px;
+    color: #777;
+    text-decoration: none;
+    transition: all 0.45s;
+  }
+
+  li a:hover{
+    color: #d94f5c;
+  }
+/*end*/
+h1 {
+    border-bottom:1px solid #bbb;
+    padding:0 0 10px 0;
+    margin:10px 0 20px 0;
+}
+input#equation{
+   margin: 0% 0% 0% 30%;
+   width:  400px;
+    height: 25px;
+    padding: 5px 10px 5px 10px;
+    font-size:16px;
+    background-color: #777;
+    border-radius:10px;
+    background: rgba(255, 255, 255, .5);
+    box-shadow: 0 0 10px rgba(248, 248, 248, 0.5);
+    border: 2px solid rgba(255, 255, 255, .5);
+    outline:none;  
+}
+input#diapasonLeft{
+    margin: 0% 0% 0% 0%;
+    width:  20px;
+     height: 25px;
+     padding: 5px 10px 5px 10px;
+     font-size:16px;
+     background-color: #777;
+     border-radius:10px;
+     background: rgba(255, 255, 255, .5);
+     box-shadow: 0 0 10px rgba(248, 248, 248, 0.5);
+     border: 2px solid rgba(255, 255, 255, .5);  
+     outline:none;   
+ }
+ input#diapasonRight{
+    margin: 0% 0% 0% 0%;
+    width:  20px;
+     height: 25px;
+     padding: 5px 10px 5px 10px;
+     font-size:16px;
+     background-color: #777;
+     border-radius:10px;
+     background: rgba(255, 255, 255, .5);
+     box-shadow: 0 0 10px rgba(248, 248, 248, 0.5);
+     border: 2px solid rgba(255, 255, 255, .5);
+     outline:none;
+}
+ input#step{
+    margin: 0% 0% 0% 0%;
+    width:  30px;
+     height: 25px;
+     padding: 5px 10px 5px 10px;
+     font-size:16px;
+     background-color: #777;
+     border-radius:10px;
+     background: rgba(255, 255, 255, .5);
+     box-shadow: 0 0 10px rgba(248, 248, 248, 0.5);
+     border: 2px solid rgba(255, 255, 255, .5);
+     outline:none;
+ }
+ 
+#speedChart{
+    padding: 0% 0% 0% 13%;
+}
+/*popupstart*/
+.b-popup{
+  display: none;
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+}
+.b-popup .b-popup-content{
+    margin:16px 28% 0px auto;
+    width:250px;
+    height: 110px;
+    padding:10px;
+    background-color: #c5c5c5;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+/*popupend*/
+
+input#calc{
+  background-color: #0693cd;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-size:16px;
+  font-weight: bold;
+  line-height: 1.4;
+  padding: 10px;
+  width: 180px;
+  position: absolute;
+  margin-left: 0.3%;
+  outline:none;
+}
+input#save{
+    background-image: url("buttonlable/boy.png");   
+    background-repeat: no-repeat; /*Убираем повтор изображения*/   
+    background-position: 4px;
+    background-size: 40px;
+    transform-origin: 35px 50px;
+    transform: rotate(-22deg);
+
+    background-color: #0693cd;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-size:16px;
+    font-weight: bold;
+    line-height: 1.4;
+    padding: 10px;
+    width: 180px;
+    position: fixed;
+    margin-left: 20.5%;
+    position: absolute;
+    outline:none;
+  }
+  input#save:active {
+    background-color: rgb(33,147,90);
+    /*box-shadow: 0 3px rgb(33,147,90) inset;*/
+  }
+a#hide{
+  margin-left:60%;
+}
+/*div#EnterField{
+
+}*/
+
+/* === Sign in Form === */
+
+h1{
+	color: rgb(147, 153, 163);
+	margin: 20px auto 0;
+	width: 200px;
+  text-align: center;
+  
+}
+.wrapper{
+	position: absolute;
+	width: 320px;
+	left: 50%;
+	margin-left: -145px;
+	top: 50%;
+	margin-top: -75px;
+}
+.signin {
+	height: 90px;
+	width: 300px;
+	border-radius: 8px;
+	position: relative;
+}
+.signin::before {
+	display: block;
+	position: relative;
+	height: 2px;
+	background: rgb(52, 56, 61);
+	content: '';
+	top: 44px;
+	margin-left: 20px;
+	z-index: 1;
+}
+.signin input:first-of-type{
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+.signin input:last-of-type{
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+.signin  input[type="text"], input[type="file"], .signin  input[type="password"], .signin input[type="email"],.signin button[type="submit"]{
+	background: rgb(245, 246, 247);
+	box-shadow: inset -100px -100px 0 rgb(147, 153, 163); /*Prevent yellow autofill color*/
+	color: #111114;
+}
+.signin  input[type="text"],input[type="file"], .signin  input[type="password"],.signin  input[type="email"]{
+	position: relative;
+	display: block;
+	width: 280px;
+	height: 45px;
+	border: 0;
+	outline: 0;
+	top: -2px;
+	padding: 0 0 0 20px;
+	font-weight: 700;
+}
+.signin  input[type="text"]:focus,input[type="file"]:focus, .signin  input[type="password"]:focus,.signin  input[type="email"]:focus{
+	color: #1c1d22;
+}
+.signin button[type="submit"]{
+	display: block;
+	position: absolute;
+	width: 52px;
+	height: 52px;
+	color: #1c1d22;
+	border-radius: 50px;
+	outline: 0;
+	z-index: 2;
+	top: 19px;
+	right: -24px;
+	border: 6px solid rgb(52, 56, 61);
+	font-size: 25px;
+	text-indent: 0px;
+	padding-left: 9px;
+	padding-bottom: -1px;
+	text-align: center;
+}
+.signin button[type="submit"]:hover{
+	color: rgb(8, 3, 73);
+	text-shadow: 0 0 10px rgb(20, 2, 63);
+	cursor: pointer;
+}
+p{
+  color: rgb(147, 153, 163);
+	margin: 20px auto 0;
+	width: 200px;
+  text-align: center;
+}
+
+/* === POLAROID ===*/
+div.polaroid {
+  position: relative;
+  float:left;
+  margin:2% 0% -2% 6%;
+}
+div.polaroid img {
+  border: 25px solid #2c2d35;
+  border-top-width: 35px;
+  border-bottom-width: 100px;
+  -webkit-box-shadow: 3px 3px 6px 4px #888;
+  -moz-box-shadow: 3px 3px 6px 4px #888;
+  box-shadow: 1px 1px 2px 2px rgb(13, 86, 153);
+  background-color: antiquewhite;
+  
+}
+#text-block {
+  position: absolute;
+  bottom: 125px;
+  right: 15%;
+  color: white;
+ /* background-color: black;*/
+  padding-left: 20px;
+  padding-right: 20px;
+  display:none;
+}
+#editI{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+}
+#editD{
+  position: absolute;
+  top: 80%;
+  left: 65%;
+}
+#editC{
+  position: absolute;
+  top: 80%;
+  left: 15%;
+}
+.button{
+  background: url('settings.png');
+  text-decoration: none;
+  border-radius: 2px;
+  background-size:contain;
+  width:35px;
+  height:35px;
+  background-repeat: no-repeat;
+  border: none;
+  outline:none;
+  border-radius: 30px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button {
+  -webkit-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+
+  
+}
+.button:hover {
+  /*background-color: #d94f5c; /* Green */
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 30px 0 rgba(0,0,0,0.19)
+  color: white;
+  -moz-transform: rotate(60deg); /* Для Firefox */
+    -ms-transform: rotate(60deg); /* Для IE */
+    -webkit-transform: rotate(60deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(60deg); /* Для Opera */
+    transform: rotate(60deg);
+}
+.button:active {
+  transform: rotate(360deg);
+}

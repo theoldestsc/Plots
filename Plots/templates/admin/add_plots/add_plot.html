@@ -1,0 +1,44 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+  <link rel="stylesheet" type="text/css" href="{% static "css/admin.css" %}" />
+{% endblock %}
+
+{% block title %}
+  Plots {{ block.super }}
+{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url "admin:index" %}">Home</a> &rsaquo;
+    <a href="{% url "admin:Plots_plot_changelist" %}">Plots</a>
+    &rsaquo;
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<table>
+    <form action="" method="post">
+  <tr>
+    <th>Function</th>
+    <td><input type="text" id = "equation" name = "equation"
+               placeholder = "sin(x)*log(x)[e]*tg(x/2)+(2*x+6/x)"></td>
+  </tr>
+  <tr>
+    <th>Left</th>
+    <td><input type="text" id = "diapasonLeft" name = "left" placeholder = "Fr"></td>
+  </tr>
+  <tr>
+    <th>Right</th>
+    <td> <input type="text" id = "diapasonRight" name = "right" placeholder = "to"></td>
+  </tr>
+  <tr>
+    <th>Step</th>
+    <td><input type="text" id = "step" name = "step" placeholder = "step"></td>
+          {% csrf_token %}
+        <input type="submit">
+</table>
+</form>
+{% endblock %}

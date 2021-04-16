@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Log-in{% endblock %}
+
+{% block help %}
+            Please, use the following form to log-in. If you don't have an account
+      <a href="{% url 'account:register' %}">register here</a></br>
+{% endblock help %}
+
+{% block changes %}
+            <li><a href="{% url 'Plots:main' %}" >Calculate</a></li>
+{% endblock %}
+
+{% block registration %}
+  <h1>Log-in</h1>
+  {% if form.errors %}
+    <p>
+      Your username and password didn't match.
+      Please try again.
+    </p>
+  {% endif %}
+  <div class="wrapper">
+    <form action="{% url 'account:login' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}9
+      <input type="hidden" name="next" value="{{ next }}" />
+        <p><input type="submit" value="LogIn"></p>
+    </form>
+  </div>
+{% endblock %}
